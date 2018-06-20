@@ -44,23 +44,23 @@
 -(void)onVpnStateChange:(NSNotification *)Notification {
     
     switch (self.providerManager.connection.status) {
-        case NEVPNStatusReasserting:
-            NSLog(@"********************ReConnecting******************");
-            break;
-        case NEVPNStatusConnecting:
-            NSLog(@"********************Connecting******************");
-            break;
-        case NEVPNStatusConnected:
-            NSLog(@"********************Connected******************");
-            break;
-        case NEVPNStatusDisconnecting:
-            NSLog(@"********************Disconnectiong******************");
+        case NEVPNStatusInvalid:
+            NSLog(@"链接无效");
             break;
         case NEVPNStatusDisconnected:
-            NSLog(@"********************Disconnected******************");
+            NSLog(@"未连接");
             break;
-        case NEVPNStatusInvalid:
-            NSLog(@"********************Invalid******************");
+        case NEVPNStatusConnecting:
+            NSLog(@"正在连接");
+            break;
+        case NEVPNStatusConnected:
+            NSLog(@"已连接");
+            break;
+        case NEVPNStatusDisconnecting:
+            NSLog(@"断开连接");
+            break;
+        case NEVPNStatusReasserting:
+            NSLog(@"********************ReConnecting******************");
             break;
         default:
             break;
@@ -71,14 +71,13 @@
 -(void)initProvider{
     NETunnelProviderProtocol *tunel = [[NETunnelProviderProtocol alloc] init];
     
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"JP01" withExtension:@"ovpn"];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"SG01" withExtension:@"ovpn"];
     NSData *data = [[NSData alloc] initWithContentsOfURL:url];
     tunel.providerConfiguration = @{@"ovpn": data};
     tunel.providerBundleIdentifier = @"net.moonjoy.OortVPN.PacketTunnel";
-    tunel.identityDataPassword = @"123456";
-    tunel.serverAddress = @"133.18.204.168";
-    tunel.username = @"647622122";
-    [self createKeychainValue:@"123456" forIdentifier:@"VPN_PASSWORD"];
+    tunel.serverAddress = @"47.88.228.77";
+    tunel.username = @"0970136610";
+    [self createKeychainValue:@"111111" forIdentifier:@"VPN_PASSWORD"];
     tunel.passwordReference =  [self searchKeychainCopyMatching:@"VPN_PASSWORD"];
     [self.providerManager setEnabled:YES];
     [self.providerManager setProtocolConfiguration:tunel];

@@ -14,7 +14,6 @@
         self.vpnAdapter = [[OpenVPNAdapter alloc] init];
         self.vpnAdapter.delegate = self;
     }
-    
     return self.vpnAdapter;
 }
 
@@ -26,7 +25,7 @@
 }
 
 -(void)handleAppMessage:(NSData *)messageData completionHandler:(void (^)(NSData * _Nullable))completionHandler{
-    
+    NSLog(@"handleAppMessage");
 }
 
 -(void)startTunnelWithOptions:(NSDictionary<NSString *,NSObject *> *)options completionHandler:(void (^)(NSError * _Nullable))completionHandler{
@@ -49,7 +48,7 @@
     if(!properties.autologin){
         OpenVPNCredentials *credentials = [[OpenVPNCredentials alloc] init];
         credentials.username = proto.username;
-        credentials.password = @"123456";
+        credentials.password = @"111111";
         [self.vpnAdapter provideCredentials:credentials error:&error];
         if(error){
             return;
