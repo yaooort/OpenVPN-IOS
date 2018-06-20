@@ -1,1 +1,1 @@
-## OpneVPN IOS MAC
+## OpneVPN IOS
