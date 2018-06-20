@@ -4,7 +4,6 @@
 <dict>
 	<key>com.apple.developer.networking.networkextension</key>
 	<array>
-		<string>content-filter-provider</string>
 		<string>packet-tunnel-provider</string>
 	</array>
 	<key>com.apple.developer.networking.vpn.api</key>
@@ -13,7 +12,7 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.net.moonjoy.OortVPN</string>
+		<string>group.com.yaooort.oortvpn</string>
 	</array>
 </dict>
 </plist>

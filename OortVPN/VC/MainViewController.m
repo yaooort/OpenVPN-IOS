@@ -74,7 +74,7 @@
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"SG01" withExtension:@"ovpn"];
     NSData *data = [[NSData alloc] initWithContentsOfURL:url];
     tunel.providerConfiguration = @{@"ovpn": data};
-    tunel.providerBundleIdentifier = @"net.moonjoy.OortVPN.PacketTunnel";
+    tunel.providerBundleIdentifier = @"com.yaooort.oortvpn.packettunnel";
     tunel.serverAddress = @"47.88.228.77";
     tunel.username = @"0970136610";
     [self createKeychainValue:@"111111" forIdentifier:@"VPN_PASSWORD"];
@@ -154,7 +154,7 @@
     return NO;
 }
 //服务器地址
-static NSString * const serviceName = @"net.moonjoy.OortVPN";
+static NSString * const serviceName = @"com.yaooort.oortvpn";
 - (NSMutableDictionary *)newSearchDictionary:(NSString *)identifier {
     //   keychain item creat
     NSMutableDictionary *searchDictionary = [[NSMutableDictionary alloc] init];

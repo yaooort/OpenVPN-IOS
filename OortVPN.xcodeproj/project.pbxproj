@@ -15,8 +15,8 @@
 		B085C5BE20D9F5B800045A78 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B085C5BD20D9F5B800045A78 /* MainViewController.m */; };
 		B085C5D120D9F8DD00045A78 /* PacketTunnelProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B085C5D020D9F8DD00045A78 /* PacketTunnelProvider.m */; };
 		B085C5D620D9F8DD00045A78 /* PacketTunnel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B085C5CD20D9F8DD00045A78 /* PacketTunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		B085C5E520DA00B600045A78 /* OpenVPNAdapter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B085C5E120D9FFDA00045A78 /* OpenVPNAdapter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B085C5E620DA013200045A78 /* OpenVPNAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B085C5E120D9FFDA00045A78 /* OpenVPNAdapter.framework */; };
+		B0BCA74920DA5CD900E6DA65 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BCA74820DA5CD900E6DA65 /* NetworkExtension.framework */; };
+		B0BCA74F20DA63F400E6DA65 /* OpenVPNAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BCA74D20DA63D600E6DA65 /* OpenVPNAdapter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,17 +47,14 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B085C5E520DA00B600045A78 /* OpenVPNAdapter.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B00D33F520DA333300915DE3 /* OpenVPNAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenVPNAdapter.framework; path = ../vpnDemo/Carthage/Build/Mac/OpenVPNAdapter.framework; sourceTree = "<group>"; };
 		B00D33FA20DA3C4B00915DE3 /* SG01.ovpn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SG01.ovpn; sourceTree = "<group>"; };
 		B038F91F20DA13070020B2DB /* NEPacketTunnelFlow+NEPacketTunnelFlow_Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NEPacketTunnelFlow+NEPacketTunnelFlow_Extension.h"; sourceTree = "<group>"; };
-		B04F95F420DA31C200112233 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/NetworkExtension.framework; sourceTree = DEVELOPER_DIR; };
 		B085C5A320D9F58300045A78 /* OortVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OortVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B085C5A620D9F58300045A78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B085C5A720D9F58300045A78 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -73,7 +70,8 @@
 		B085C5D020D9F8DD00045A78 /* PacketTunnelProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PacketTunnelProvider.m; sourceTree = "<group>"; };
 		B085C5D220D9F8DD00045A78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B085C5D320D9F8DD00045A78 /* PacketTunnel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PacketTunnel.entitlements; sourceTree = "<group>"; };
-		B085C5E120D9FFDA00045A78 /* OpenVPNAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenVPNAdapter.framework; sourceTree = "<group>"; };
+		B0BCA74820DA5CD900E6DA65 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		B0BCA74D20DA63D600E6DA65 /* OpenVPNAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenVPNAdapter.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0BCA74920DA5CD900E6DA65 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B085C5E620DA013200045A78 /* OpenVPNAdapter.framework in Frameworks */,
+				B0BCA74F20DA63F400E6DA65 /* OpenVPNAdapter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,9 +157,8 @@
 		B085C5C520D9F8B100045A78 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B00D33F520DA333300915DE3 /* OpenVPNAdapter.framework */,
-				B04F95F420DA31C200112233 /* NetworkExtension.framework */,
-				B085C5E120D9FFDA00045A78 /* OpenVPNAdapter.framework */,
+				B0BCA74D20DA63D600E6DA65 /* OpenVPNAdapter.framework */,
+				B0BCA74820DA5CD900E6DA65 /* NetworkExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -245,7 +243,7 @@
 						CreatedOnToolsVersion = 9.4.1;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.NetworkExtensions.iOS = {
 								enabled = 0;
@@ -470,7 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OortVPN/OortVPN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 972Y79KZ88;
+				DEVELOPMENT_TEAM = 86255LNSFB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -481,7 +479,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.moonjoy.OortVPN;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yaooort.oortvpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -493,7 +491,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OortVPN/OortVPN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 972Y79KZ88;
+				DEVELOPMENT_TEAM = 86255LNSFB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -504,7 +502,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.moonjoy.OortVPN;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yaooort.oortvpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -513,8 +511,9 @@
 		B085C5D820D9F8DD00045A78 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 972Y79KZ88;
+				DEVELOPMENT_TEAM = 86255LNSFB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -525,7 +524,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.moonjoy.OortVPN.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yaooort.oortvpn.packettunne;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -535,8 +534,9 @@
 		B085C5D920D9F8DD00045A78 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 972Y79KZ88;
+				DEVELOPMENT_TEAM = 86255LNSFB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -547,7 +547,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.moonjoy.OortVPN.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yaooort.oortvpn.packettunne;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
