@@ -9,8 +9,8 @@
 #import "MainViewController.h"
 @import NetworkExtension;
 
-NSString * const UESRNAME = @"647622122";
-NSString * const PASSWORD = @"111111";
+NSString * const UESRNAME = @"用户名";
+NSString * const PASSWORD = @"密码";
 
 @interface MainViewController ()
 
