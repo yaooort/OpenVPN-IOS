@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B00D33FB20DA3C4B00915DE3 /* SG01.ovpn in Resources */ = {isa = PBXBuildFile; fileRef = B00D33FA20DA3C4B00915DE3 /* SG01.ovpn */; };
+		B047F0DB20DB3C4500B488B6 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BCA74820DA5CD900E6DA65 /* NetworkExtension.framework */; };
 		B085C5A820D9F58300045A78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B085C5A720D9F58300045A78 /* AppDelegate.m */; };
 		B085C5B020D9F58400045A78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B085C5AF20D9F58400045A78 /* Assets.xcassets */; };
 		B085C5B320D9F58400045A78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B085C5B120D9F58400045A78 /* LaunchScreen.storyboard */; };
@@ -88,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0BCA74F20DA63F400E6DA65 /* OpenVPNAdapter.framework in Frameworks */,
+				B047F0DB20DB3C4500B488B6 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +233,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
 							com.apple.NetworkExtensions.iOS = {
 								enabled = 1;
 							};
@@ -246,10 +251,10 @@
 								enabled = 1;
 							};
 							com.apple.NetworkExtensions.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.VPNLite = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -403,7 +408,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -455,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

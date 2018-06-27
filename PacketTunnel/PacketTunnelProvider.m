@@ -2,33 +2,35 @@
 //  PacketTunnelProvider.m
 //  PacketTunnel
 //
-//  Created by bunny on 2018/6/20.
+//  Created by oort on 2018/6/20.
 //  Copyright © 2018年 oort_vpn. All rights reserved.
 //
 
 #import "PacketTunnelProvider.h"
 #import "NEPacketTunnelFlow+NEPacketTunnelFlow_Extension.h"
 @implementation PacketTunnelProvider
+
 -(OpenVPNAdapter*)vpnAdapter{
-    if(!self.vpnAdapter){
-        self.vpnAdapter = [[OpenVPNAdapter alloc] init];
-        self.vpnAdapter.delegate = self;
+    if(!_vpnAdapter){
+        _vpnAdapter = [[OpenVPNAdapter alloc] init];
+        _vpnAdapter.delegate = self;
     }
-    return self.vpnAdapter;
+    return _vpnAdapter;
 }
 
 -(OpenVPNReachability*)openVpnReach{
-    if(!self.openVpnReach){
-        self.openVpnReach = [[OpenVPNReachability alloc] init];
+    if(!_openVpnReach){
+        _openVpnReach = [[OpenVPNReachability alloc] init];
     }
-    return self.openVpnReach;
+    return _openVpnReach;
 }
 
 -(void)handleAppMessage:(NSData *)messageData completionHandler:(void (^)(NSData * _Nullable))completionHandler{
-    NSLog(@"handleAppMessage");
+    
 }
 
 -(void)startTunnelWithOptions:(NSDictionary<NSString *,NSObject *> *)options completionHandler:(void (^)(NSError * _Nullable))completionHandler{
+
     NETunnelProviderProtocol *proto =  (NETunnelProviderProtocol*)self.protocolConfiguration;
     if(!proto){
         return;
@@ -37,18 +39,16 @@
     NSData * fileContent = provider[@"ovpn"];
     OpenVPNConfiguration *openVpnConfiguration = [[OpenVPNConfiguration alloc] init];
     openVpnConfiguration.fileContent = fileContent;
-    openVpnConfiguration.settings = @{};
-    openVpnConfiguration.disableClientCert = YES;
-    openVpnConfiguration.forceCiphersuitesAESCBC = YES;
     NSError *error;
     OpenVPNProperties *properties = [self.vpnAdapter applyConfiguration:openVpnConfiguration error:&error];
     if(error){
         return;
     }
+    
     if(!properties.autologin){
         OpenVPNCredentials *credentials = [[OpenVPNCredentials alloc] init];
-        credentials.username = proto.username;
-        credentials.password = @"111111";
+        credentials.username = [NSString stringWithFormat:@"%@",[options objectForKey:@"username"]];
+        credentials.password = [NSString stringWithFormat:@"%@",[options objectForKey:@"password"]];
         [self.vpnAdapter provideCredentials:credentials error:&error];
         if(error){
             return;
